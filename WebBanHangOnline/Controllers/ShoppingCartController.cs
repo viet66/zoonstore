@@ -106,6 +106,7 @@ namespace WebBanHangOnline.Controllers
                     var TongTien = decimal.Zero;
                     foreach (var sp in cart.Items)
                     {
+
                         strSanPham += "<tr>";
                         strSanPham += "<td>" + sp.ProductName + "</td>";
                         strSanPham += "<td>" + sp.Quantity + "</td>";
@@ -193,6 +194,7 @@ namespace WebBanHangOnline.Controllers
             }
             return Json(new { Success = false });
         }
+
         [HttpPost]
         public ActionResult Delete(int id)
         {
@@ -213,16 +215,16 @@ namespace WebBanHangOnline.Controllers
 
 
 
-        [HttpPost]
-        public ActionResult DeleteAll()
-        {
-            ShoppingCart cart = (ShoppingCart)Session["Cart"];
-            if (cart != null)
-            {
-                cart.ClearCart();
-                return Json(new { Success = true });
-            }
-            return Json(new { Success = false });
-        }
+        //[HttpPost]
+        //public ActionResult DeleteAll()
+        //{
+        //    ShoppingCart cart = (ShoppingCart)Session["Cart"];
+        //    if (cart != null)
+        //    {
+        //        cart.ClearCart();
+        //        return Json(new { Success = true });
+        //    }
+        //    return Json(new { Success = false });
+        //}
     }
 }

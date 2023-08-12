@@ -21,7 +21,7 @@ namespace WebBanHangOnline.Controllers
             {
                 pages = 1;
             }
-            IEnumerable<Product> items = db.Products.OrderByDescending(x => x.Id);
+            IEnumerable<Product> items = db.Products.OrderBy(x => x.Id);
             if (!string.IsNullOrEmpty(Searchtext))
             {
                 items = items.Where(x => x.Alias.Contains(Searchtext) || x.Title.Contains(Searchtext));
